@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Homework_3_JS_Modul_II</title>
+</head>
+
+<body bgcolor="#fff">
+    <h1>This is a homework html file</h1>
+    <form>
+        <p><b>Введите ваш тег:</b><br>
+            <input type="text" size="40" id="inputTag">
+        </p>
+        <p><b>Введите текст внутрь тега:</b><br>
+            <input type="text" size="40" id="inputTagValue">
+        </p>
+        <button type="button" onclick="connection()">Результат</button><br>
+        <p id="inner"></p>
+    </form>
+    <script type='text/javascript'>
+        function connection() {
+            if (window.inputTag.value && window.inputTagValue.value) {
+                var tag = window.inputTag.value;
+                var text = window.inputTagValue.value;
+                var element = document.createElement(tag); //div
+                //element = Node
+
+                document.body.appendChild(element);
+                document.getElementById('inner').innerHTML = '&lt' + tag + '&gt' + text + '&lt/' + tag + '&gt';
+            }
+            return connection;
+
+        }
+    </script>
+
+    <hr>
+
+</body>
+
+</html>
